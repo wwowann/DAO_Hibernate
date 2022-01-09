@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 import java.util.List;
 
 @Repository
@@ -23,10 +24,10 @@ public class RepositoryClass {
 
 
     public List<Persons> getPersonsByCity(String city) {
-        Query query = entityManager.createQuery
+        TypedQuery<Persons> query = entityManager.createQuery
                 ("select p from Persons p where p.city_of_living = :city",//здесь ссылаемся не на таблицу persons, а на сущность - экземпляр класса Persons
                         Persons.class);
-        query.setParameter("city", "MOSCOW");
+        query.setParameter("city", city);
 
         return query.getResultList();
     }

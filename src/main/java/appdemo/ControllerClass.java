@@ -18,7 +18,7 @@ public class ControllerClass {
     }
 
     @GetMapping("/persons/by-city")
-    public List getListPersonByCity(@RequestParam("city_of_living") String city_name){
+    public List<Persons> getListPersonByCity(String city_name){
         return repository.getPersonsByCity(city_name);
     }
 }
