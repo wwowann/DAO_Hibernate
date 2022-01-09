@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Data
 @Builder
 @Entity
-@Table(name = "persons", schema = "persons")// данный атрибут необходим, если нужно указать название
+@Table(name = "persons", schema = "person")// данный атрибут необходим, если нужно указать название
 // таблицы, каталог таблицы или название схемы, в которой находится таблица
 public class Persons {
     @Id

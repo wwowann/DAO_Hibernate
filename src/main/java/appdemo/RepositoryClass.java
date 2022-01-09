@@ -26,7 +26,7 @@ public class RepositoryClass {
         Query query = entityManager.createQuery
                 ("select p from Persons p where p.city_of_living = :city",//здесь ссылаемся не на таблицу persons, а на сущность - экземпляр класса Persons
                         Persons.class);
-        query.setParameter("city", "Moscow");
+        query.setParameter("city", "MOSCOW");
 
         return query.getResultList();
     }
